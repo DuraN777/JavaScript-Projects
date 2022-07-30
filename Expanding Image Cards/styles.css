@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  overflow: hidden;
+}
+.container {
+  display: flex;
+  color: white;
+  width: 90vw;
+}
+
+.panel {
+  background-size: auto 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 50px;
+  height: 80vh;
+  cursor: pointer;
+  /* mannage width to be even */
+  flex: 0.5;
+  margin: 10px;
+  position: relative;
+  transition: flex 0.7s ease-in;
+}
+
+.panel h3 {
+  font-size: 24px;
+  /* Position text 20px from bottom and left side */
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  opacity: 0;
+}
+
+.panel.active {
+  flex: 2.5;
+}
+
+.panel.active h3{
+  opacity: 1;
+  /* transition: <property> <duration> <timing-function> <delay>; */
+  transition: opacity 350ms ease-in 500ms;
+}
