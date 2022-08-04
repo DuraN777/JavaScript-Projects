@@ -1,0 +1,145 @@
+* {
+  box-sizing: border-box;
+}
+
+/* dark background for when its rotated */
+body {
+  margin: 0; 
+  overflow-x: hidden;
+  background-color: #333;
+  color: #222;
+}
+
+.container {
+  background-color: #fafafa;
+  /* set rotating point with transform-origin */
+  /* https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin */
+  transform-origin: top left;
+  transition: transform 0.5s linear;
+  width: 100vw;
+  min-height: 100vh;
+  padding: 50px;
+}
+
+/* rotate container when .show-nav is active */
+/* when rottin origin of rotation is in the center,
+however I want to rotate from top-left position*/
+.container.show-nav {
+  transform: rotate(-20deg);
+}
+
+.circle-container {
+  position: fixed;
+  top: -100px;
+  left: -100px;
+}
+
+.circle {
+  background-color: #ff7979;
+  /* half is hidden with -100px offset in circle-container */
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  position: relative;
+  /* same as container rotation */
+  transition: transform 0.5s linear;
+}
+
+.circle button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100px;
+  background: transparent;
+  border: 0;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* .circle button:focus {
+  outline: none;
+} */
+
+/* target ID to manipulate butons, move "open" right of "close" */
+.circle button#open {
+  left: 60%;
+}
+
+.circle button#close {
+  top: 60%;
+  /* relative to the circle */
+  transform: rotate(90deg);
+  transform-origin: top left;
+}
+
+/* Rotate circle when cntainer gets .show-nav */
+.container.show-nav .circle {
+  transform: rotate(-70deg);
+}
+
+/* ## Content ## */
+.content img {
+  max-width: 100%;
+}
+
+.content {
+  max-width: 1000px;
+  margin: 50px auto;
+}
+
+.conent h1 {
+  margin: 0;
+}
+
+.content small {
+  color: #555;
+  font-style: italic;
+}
+
+.content p {
+  color: #333;
+  line-height: 1.3;
+}
+
+/* ## NAV ## */
+
+/* container + show-nav, make nav li visible (every li in an nav) */
+.container.show-nav + nav li {
+  transform: translateX(0);
+}
+
+nav {
+  position: fixed;
+  bottom: 40px;
+  left: 0;
+  z-index: 2;
+}
+
+nav ul {
+  list-style: none;
+  padding-left: 30px;
+}
+
+nav ul li {
+  text-transform: uppercase;
+  color: white;
+  margin: 30px auto;
+  /* move it to the left, out 0f sight*/
+  transform: translateX(-300%); 
+  transition: transform 0.5s ease-in;
+}
+
+/* make nav items stick out after each other */
+nav ul li + li {
+  margin-left: 25px;
+}
+
+nav ul li + li + li {
+  margin-left: 50px;
+}
+
+nav ul li i {
+  font-size: 1.3rem;
+  margin-right: 10px;
+}
