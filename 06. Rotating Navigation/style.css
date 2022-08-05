@@ -22,7 +22,7 @@ body {
 }
 
 /* rotate container when .show-nav is active */
-/* when rottin origin of rotation is in the center,
+/* origin of rotation is in the center,
 however I want to rotate from top-left position*/
 .container.show-nav {
   transform: rotate(-20deg);
