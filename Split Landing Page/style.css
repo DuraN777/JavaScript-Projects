@@ -41,7 +41,7 @@ h1 {
 }
 
 .btn {
-  /* postiions it within its container, in this case side (.left / .right) */
+  /* positions it within its container, in this case side (.split.left / .split.right) */
   position: absolute;
   left: 50%;
   top: 40%;
