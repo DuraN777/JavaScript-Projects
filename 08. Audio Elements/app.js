@@ -9,9 +9,10 @@ sounds.forEach(sound => {
   // Populate inner text of each button with sounds elements
   btn.innerText = sound;
 
-  // PLay sound on click
+  // Play sound on btn click
   btn.addEventListener('click', () => {
     stopAudio();
+    // select Audio element by sound id and play it
     document.getElementById(sound).play();
   })
   // Inserting them into HTML in the id='buttons' DIV
