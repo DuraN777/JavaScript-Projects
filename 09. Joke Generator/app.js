@@ -3,23 +3,39 @@ const jokeBtn = document.getElementById('jokeBtn');
 
 generateJoke();
 
-// fetching from 'icanhazdadjoke.com'
-function generateJoke() {
-  fetch('https://icanhazdadjoke.com', {
+jokeBtn.addEventListener('click', () => generateJoke());
+
+// Fetching using ASYNC/AWAIT
+async function generateJoke() {
+  // Putting header in a variable
+  const config = {
     headers: {
       'Accept': 'application/json'
     }
-  })
-  .then(res => res.json())
-  .then(data => {
-    jokeEl.innerHTML = data.joke;
-  })
+  }
+  // putting promises in variable
+  const res = await fetch('https://icanhazdadjoke.com', config);
+
+  const data = await res.json();
+
+  jokeEl.innerHTML = data.joke;
 }
 
-jokeBtn.addEventListener('click', () => generateJoke());
+      // Fetching using ".then"
+// function generateJoke() {
+//   fetch('https://icanhazdadjoke.com', {
+//     headers: {
+//       'Accept': 'application/json'
+//     }
+//   })
+//   .then(res => res.json())
+//   .then(data => {
+//     jokeEl.innerHTML = data.joke;
+//   })
+// }
 
 // About fetch "https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API"
-// The fetch() method takes one mandatory argument, the path to the resource you want to fetch. It returns a Promise that resolves to the Response to that request 
+// The fetch() method takes one mandatory argument, the path to the resource you want to fetch. It returns a Promise that resolves to the Response to that request.
 
 /*  A basic fetch request, how it works:
 
