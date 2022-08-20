@@ -60,6 +60,14 @@ h2 {
 
 @media (max-width: 800px) { 
   html {
-    font-size: 12px;
+    font-size: 10px;
+  }
+
+  body {
+    overflow:scroll;
+  }
+
+  .joke {
+    letter-spacing: 0px;
   }
 }
