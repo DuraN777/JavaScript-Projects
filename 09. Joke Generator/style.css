@@ -23,7 +23,7 @@ body {
   max-width: 100%;
   width: 800px;
   text-align: center;
-  margin: 1.5rem;
+  margin: 2.5rem;
 }
 
 h2 {
@@ -45,7 +45,7 @@ h2 {
   border: 0;
   border-radius: 7px;
   padding: 15px 40px;
-  font-size: 1rem;
+  font-size: 1.1rem;
   cursor: pointer;
   font-family: inherit;
 }
@@ -58,3 +58,8 @@ h2 {
   outline: 0;
 }
 
+@media (max-width: 800px) { 
+  html {
+    font-size: 12px;
+  }
+}
