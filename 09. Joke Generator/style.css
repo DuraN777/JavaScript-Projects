@@ -10,7 +10,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   margin: auto;
 }
 
@@ -62,9 +62,4 @@ h2 {
     font-size: 12px;
   }
 
-  .joke {
-    font-size: 1.9rem;
-    letter-spacing: 0px;
-    line-height: 2.1rem;
-  }
 }
