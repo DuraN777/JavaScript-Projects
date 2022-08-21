@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Muli', sans-serif;
+  background-color: #f0f0f0;
+}
+
+h1 {
+  margin: 3.125rem 0px 1.875rem;
+  text-align: center;
+}
+
+.faq-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.faq {
+  background-color: transparent;
+  border: 1px solid #9fa4a8;
+  border-radius: 10px;
+  margin: 1.25rem 0;
+  padding: 1.875rem;
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+.faq.active {
+  background-color: white;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+}
+
+.faq.active::before,
+.faq.active::after {
+  /* inserting fontawesome into CSS */
+  content: '\f075';
+  font-family: "Font Awesome 5 Free";
+  color:#23cc71;
+  opacity: 0.2;
+  font-size: 5rem;
+  /* Positions both at same place */
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  z-index: 0;
+}
+
+.faq.active::before {
+  color: #3498db;
+  top: -10px;
+  left: -20px;
+  transform: rotateY(180deg);
+}
+
+
+.faq-title {
+  margin: 0 35px 0 0;
+}
+/* Hide faq-text */
+.faq-text {
+  margin: 25px 0 0;
+  display: none;
+}
+
+/* Show faq-text if class active is added */
+.faq.active .faq-text {
+  display: block
+}
+
+/* BUTTONS */
+
+.faq-toggle {
+  background-color: transparent;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem; 
+  padding: 0;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  height: 30px;
+  width: 30px;
+}
+      /* SET CLASSES TO TOOGLE X and Chevron */
+/* Hide X  */
+.faq-toggle .fa-times {
+  display: none;
+}
+/* Add X on active element */
+.faq.active .faq-toggle .fa-times {
+  display: block;
+  color: white;
+}
+
+.faq.active .faq-toggle .fa-chevron-down {
+  display: none;
+}
+
+/* background on active button */
+.faq.active .faq-toggle {
+  background-color: #9fa4a8;
+}
