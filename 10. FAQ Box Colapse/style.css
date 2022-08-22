@@ -35,6 +35,7 @@ h1 {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
 }
 
+/* Comment icons */
 .faq.active::before,
 .faq.active::after {
   /* inserting fontawesome into CSS */
@@ -61,13 +62,14 @@ h1 {
 .faq-title {
   margin: 0 35px 0 0;
 }
+
 /* Hide faq-text */
 .faq-text {
   margin: 25px 0 0;
   display: none;
 }
 
-/* Show faq-text if class active is added */
+/* Show faq-text if class active is added to parrent element */
 .faq.active .faq-text {
   display: block
 }
@@ -90,7 +92,7 @@ h1 {
   height: 30px;
   width: 30px;
 }
-      /* SET CLASSES TO TOOGLE X and Chevron */
+      /* SET CLASSES TO TOGGLE X and Chevron */
 /* Hide X  */
 .faq-toggle .fa-times {
   display: none;
@@ -101,6 +103,7 @@ h1 {
   color: white;
 }
 
+/* Hide arrow down on ACTIVE */
 .faq.active .faq-toggle .fa-chevron-down {
   display: none;
 }
