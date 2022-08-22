@@ -16,7 +16,7 @@ h1 {
 
 .faq-container {
   max-width: 600px;
-  margin: 0 auto;
+  margin: 0 auto 3.125rem;
 }
 
 .faq {
