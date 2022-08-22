@@ -8,6 +8,15 @@ textarea.addEventListener('keyup',(e) => {
   // pass in an event parameter.
   // e.target.value will be whatever user types in txtArea
   createTags(e.target.value)
+
+  if(e.key === 'Enter') {
+    // On Enter, clear textarea/set value to empty string, after 10ms
+    setTimeout(() => {
+      e.target.value = ''
+    }, 10)
+
+    randomSelect()
+  }
 })
 
 // This function will take whatever we type in, separate elements by a coma,
@@ -24,6 +33,44 @@ function createTags(input) {
     tagsEl.appendChild(tagEl);
   });
 }
+
+function randomSelect() {
+  const times = 30;
+
+  const interval = setInterval(() => {
+    const randomTag = pickRandomTag(); 
+
+    highlightTag(randomTag);
+
+    setTimeout(() => {
+      unHighlightTag(randomTag);
+    }, 100)
+  } ,100)
+
+  setTimeout(() => {
+    clearInterval(interval);
+    setTimeout(() => {
+      const randomTag= pickRandomTag();
+      highlightTag(randomTag);
+    }, 100)
+  }, times * 100);
+}
+
+function pickRandomTag() {
+  const tags = document.querySelectorAll('.tag');
+  return tags[Math.floor(Math.random() * tags.length)];
+}
+
+function highlightTag(tag) {
+  tag.classList.add('highlight');
+}
+
+function unHighlightTag(tag) {
+  tag.classList.remove('highlight');
+}
+
+
+
 
 /* function createTags:
 takes in an input ,
